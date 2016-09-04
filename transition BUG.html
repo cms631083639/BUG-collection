@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            width: calc(6 * 160px);
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%);
+            margin-left: -80px;
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        li {
+            width: 160px;
+            height: 111px;
+            float: left;
+            border: 1px solid #CCCCCC;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        li:nth-child(1) {
+            background-color: red;
+        }
+
+        li:nth-child(2) {
+            background-color: green;
+        }
+
+        li:nth-child(3) {
+            background-color: blue;
+        }
+
+        li:nth-child(4) {
+            background-color: yellow;
+        }
+
+        li:nth-child(5) {
+            background-color: orange;
+        }
+
+        li:nth-child(6) {
+            background-color: red;
+        }
+
+        .header {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%);
+            z-index: 100;
+        }
+
+    </style>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            var ul = document.querySelector (".banner ul");
+            var index = 3;
+            setInterval (function () {
+                if (index == 5) {
+                    index = 0;
+                    ul.style.webkitTransition = "none";
+                    ul.style.transition = "none";
+                    ul.style.webkitTransform = "translateX(" + (-index * 160) + "px)";
+                    ul.style.transform = "translateX(" + (-index * 160) + "px)";
+                }
+                ul.style.webkitTransition = "all .5s";
+                ul.style.transition = "all .5s";
+                index++;
+                ul.style.webkitTransform = "translateX(" + (-index * 160) + "px)";
+                ul.style.transform = "translateX(" + (-index * 160) + "px)";
+            }, 1000)
+//            ul.addEventListener('transitionend',function () {
+//                if (index == 5) {
+//                    index = 0;
+//                    ul.style.webkitTransition = "none";
+//                    ul.style.transition = "none";
+//                    ul.style.webkitTransform = "translateX(" + (-index * 640) + "px)";
+//                    ul.style.transform = "translateX(" + (-index * 640) + "px)";
+//                }
+//            })
+        };
+    </script>
+</head>
+
+
+<body>
+    <input class="header"  placeholder="请输入商品名称">
+    <!--//轮播图-->
+    <div class="banner">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>
