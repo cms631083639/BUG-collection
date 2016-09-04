@@ -1,0 +1,3 @@
+# BUG-collection
+transition 属性与setInterval配合后 运行时无法达到瞬间回到第一张的bug,但是在浏览器调试的时候却可以正确呈现正确的展示效果
+
